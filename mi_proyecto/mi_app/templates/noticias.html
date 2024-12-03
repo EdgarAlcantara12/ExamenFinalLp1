@@ -1,0 +1,38 @@
+{% extends 'comun.html' %}
+
+{% block title %}Últimas Noticias{% endblock %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/noticias.css' %}">
+<script src="{% static 'js/noticias.js' %}" defer></script>
+
+<div class="filter-search-container">
+    <div class="filter-container">
+        <label for="filter-date">Filtrar por fecha:</label>
+        <input type="date" id="filter-date">
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar título o contenido...">
+    </div>
+</div>
+
+
+<div class="noticias-container">
+    <h1>Últimas Noticias</h1>
+    <div class="noticias-grid">
+        {% for noticia in noticias %}
+        <div class="noticia-card">
+            <h2>{{ noticia.titulo }}</h2>
+            <p>{{ noticia.contenido }}</p>
+            <a href="{{ noticia.fuente }}" target="_blank">Leer más</a>
+            <p class="fecha">Publicado el: {{ noticia.fecha_publicacion }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<button id="back-to-top" class="back-to-top">↑</button>
+<div id="alert-box" class="alert-box"></div>
+
+{% endblock %}

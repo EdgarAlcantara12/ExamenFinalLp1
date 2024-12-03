@@ -1,0 +1,195 @@
+/* Contenedor principal */
+.herramientas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background-color: #f4f9fc; /* Fondo suave */
+    border-radius: 10px;
+}
+
+/* Título */
+.herramientas-container h1 {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Categorías */
+.categoria {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.categoria h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* Carrusel */
+.carousel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Espacio adicional entre las cards */
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+/* Card de cada herramienta */
+.herramienta-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 230px; /* Ajustar el tamaño de la card */
+    text-align: center;
+    margin: 15px;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #e7f0fa; /* Fondo más suave */
+}
+
+.herramienta-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos de las herramientas */
+.herramienta-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+    white-space: normal; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+
+/* Imagen de la herramienta */
+.herramienta-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.herramienta-card:hover img {
+    transform: scale(1.1); /* Efecto de zoom en la imagen */
+}
+
+/* Botón Ver */
+.ver-detalles {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+}
+
+.ver-detalles:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out; /* Animación de aparición */
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.modal-content a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-content a:hover {
+    color: #0056b3;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Animación de fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ajustes de Scroll */
+.carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 5px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}

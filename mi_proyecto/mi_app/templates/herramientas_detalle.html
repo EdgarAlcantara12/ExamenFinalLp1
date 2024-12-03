@@ -1,0 +1,47 @@
+{% extends 'comun.html' %}
+
+{% block title %}Herramientas{% endblock %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/herramienta_detalles.css' %}">
+
+<div class="herramientas-container">
+    <h1>Herramientas Disponibles</h1>
+    {% for categoria in categorias %}
+    <div class="categoria">
+        <h2>{{ categoria.nombre }}</h2>
+        <div class="carousel-container">
+            <div class="carousel">
+                {% for herramienta in categoria.herramienta_set.all %}
+                <div class="herramienta-card" data-id="{{ herramienta.id }}">
+                    <h3 class="nombre-herramienta" 
+                        data-id="{{ herramienta.id }}" 
+                        data-nombre="{{ herramienta.nombre }}" 
+                        data-descripcion="{{ herramienta.descripcion }}" 
+                        data-enlace="{{ herramienta.enlace }}" 
+                        data-imagen="{{ herramienta.imagen.url }}">
+                        {{ herramienta.nombre }}
+                    </h3>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Modal dinámico -->
+<div id="herramienta-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="Imagen de la herramienta" style="display: none;">
+        <p id="modal-description"></p>
+        <a id="modal-link" href="#" target="_blank">Ir al enlace</a>
+    </div>
+</div>
+
+<script src="{% static 'js/herramientas.js' %}"></script>
+
+{% endblock %}

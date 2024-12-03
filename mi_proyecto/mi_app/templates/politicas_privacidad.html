@@ -1,0 +1,73 @@
+{% extends 'comun.html' %}
+
+{% block title %}Políticas de Privacidad{% endblock %}
+
+{% block content %}
+<div class="privacy-container">
+    <h1 class="animate__animated animate__fadeInDown">Políticas de Privacidad</h1>
+    <p class="animate__animated animate__fadeInUp">
+        En <strong>CyberToolHub</strong>, la privacidad de nuestros usuarios es nuestra máxima prioridad. Esta política describe cómo recopilamos, usamos y protegemos tu información personal.
+    </p>
+
+    <section class="animate__animated animate__fadeIn">
+        <h2>1. Información que Recopilamos</h2>
+        <ul>
+            <li>Información personal proporcionada por los usuarios (nombre, correo electrónico).</li>
+            <li>Datos de navegación como dirección IP, tiempo de visita y páginas visitadas.</li>
+            <li>Preferencias del usuario para mejorar su experiencia.</li>
+        </ul>
+    </section>
+
+    <section class="animate__animated animate__fadeIn">
+        <h2>2. Uso de la Información</h2>
+        <p>
+            Utilizamos los datos recopilados para:
+        </p>
+        <ul>
+            <li>Mejorar la funcionalidad y experiencia del sitio.</li>
+            <li>Responder a consultas enviadas a través del formulario de contacto.</li>
+            <li>Proteger la seguridad del sitio y prevenir actividades maliciosas.</li>
+        </ul>
+    </section>
+
+    <section class="animate__animated animate__fadeIn">
+        <h2>3. Protección de tu Información</h2>
+        <p>
+            Implementamos medidas de seguridad avanzadas para proteger tus datos. Esto incluye cifrado de información y monitoreo constante del sistema.
+        </p>
+    </section>
+
+    <section class="animate__animated animate__fadeIn">
+        <h2>4. Compartir tu Información</h2>
+        <p>
+            Tu información no será compartida con terceros, excepto en los siguientes casos:
+        </p>
+        <ul>
+            <li>Cuando sea requerido por la ley.</li>
+            <li>Para prevenir fraude o garantizar la seguridad.</li>
+        </ul>
+    </section>
+
+    <section class="animate__animated animate__fadeIn">
+        <h2>5. Tus Derechos</h2>
+        <ul>
+            <li>Acceder, actualizar o eliminar tu información personal.</li>
+            <li>Solicitar información sobre cómo utilizamos tus datos.</li>
+        </ul>
+    </section>
+
+    <section class="animate__animated animate__fadeIn">
+        <h2>6. Cambios a esta Política</h2>
+        <p>
+            Nos reservamos el derecho de actualizar esta política de privacidad en cualquier momento. Cualquier cambio será publicado en esta página.
+        </p>
+    </section>
+
+    <section class="animate__animated animate__fadeIn">
+        <h2>7. Contacto</h2>
+        <p>
+            Si tienes preguntas sobre nuestra política de privacidad, puedes contactarnos a través de nuestro <a href="{% url 'contacto' %}">formulario de contacto</a>.
+        </p>
+    </section>
+</div>
+{% endblock %}

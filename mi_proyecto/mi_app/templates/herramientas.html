@@ -1,0 +1,27 @@
+{% extends 'comun.html' %}
+
+{% block title %}Herramientas de Ciberseguridad{% endblock %}
+
+{% block content %}
+<h1>Herramientas de Ciberseguridad</h1>
+
+{% for categoria in categorias %}
+    <h2>{{ categoria.nombre }}</h2>
+    <div>
+        {% for herramienta in categoria.herramienta_set.all %}
+            <article style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;">
+                {% if herramienta.imagen %}
+                    <img src="{{ herramienta.imagen.url }}" alt="Imagen de {{ herramienta.nombre }}" style="max-width: 100px; float: left; margin-right: 10px;">
+                {% endif %}
+                <h3>{{ herramienta.nombre }}</h3>
+                <p>{{ herramienta.descripcion }}</p>
+                {% if herramienta.enlace %}
+                    <a href="{{ herramienta.enlace }}" target="_blank">Más información</a>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+{% empty %}
+    <p>No hay herramientas disponibles.</p>
+{% endfor %}
+{% endblock %}
